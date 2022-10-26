@@ -39,23 +39,23 @@ public class MaquinariaServlet extends HttpServlet {
             int stock = Integer.parseInt(request.getParameter("txtStock"));
             String mensaje = "Error";
             int res;
-            
+
             Maquinaria c = new Maquinaria(codigo, nombre, stock);
             MaquinariaDAO maquinariaDAO = new MaquinariaDAO();
-            
-            if(request.getParameter("btnGuardar") != null){
+
+            if (request.getParameter("btnGuardar") != null) {
                 res = maquinariaDAO.insertarMaquinaria(c);
-                if(res != 0){
+                if (res != 0) {
                     mensaje = "Informacion Agregada Corretamente";
                 }
-            } 
+            }
             request.setAttribute("message", mensaje);
             request.getRequestDispatcher("/vistas/maquinaria.jsp").forward(request, response);
-            
-        }catch(Exception e){
-            System.out.println("Error "+e.getLocalizedMessage());
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
-    }  
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
