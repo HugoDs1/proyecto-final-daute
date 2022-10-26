@@ -14,6 +14,8 @@
     <body>
         <%@include file ="template/menu.jsp" %>
         <div class="container">
+            
+            <br><br><br>
             <h1>Bienvenido a la Constructora</h1>
         </div>
         
