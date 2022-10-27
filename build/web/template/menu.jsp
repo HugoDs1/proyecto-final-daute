@@ -10,7 +10,7 @@
         <div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header d-flex flex-column justify-content-center">
                 <div>
-                    <p class="fw-bold text-white">Username</p>
+                    <p class="fw-bold text-white text-capitalize"><%= usuario %></p>
                 </div>
                 <div class="w-25">
                     <img
@@ -24,6 +24,9 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="${pageContext.servletContext.contextPath}/index.jsp">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vistas/usuarios.jsp">Gestionar Usuarios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Gestionar Empleados</a>
@@ -47,6 +50,9 @@
                             </li>
                             <li><a class="dropdown-item" href="#">Boletas de Pago</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/login.jsp?cerrar=true">Cerrar Sesion</a>
                     </li>
                 </ul>
             </div>

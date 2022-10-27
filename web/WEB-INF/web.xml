@@ -4,9 +4,25 @@
         <servlet-name>MaquinariaServlet</servlet-name>
         <servlet-class>com.controlador.MaquinariaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UsuarioServlet</servlet-name>
+        <servlet-class>com.controlador.UsuarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.controlador.LoginServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MaquinariaServlet</servlet-name>
         <url-pattern>/MaquinariaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsuarioServlet</servlet-name>
+        <url-pattern>/UsuarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
