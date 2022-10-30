@@ -10,12 +10,12 @@
         <div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header d-flex flex-column justify-content-center">
                 <div>
-                    <p class="fw-bold text-white"><%= usuario%> | <%= nivel %></p>
+                    <p class="fw-bold text-white"><%= usuario%> | <%= nivel%></p>
                 </div>
                 <div class="w-25">
                     <img
                         class="w-100 h-100 rounded-circle"
-                        src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"
+                        src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png"
                         alt="Imagen del Usuario" 
                         >
                 </div>
@@ -36,20 +36,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/vistas/proyecto.jsp">Gestionar Proyecto</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Reportes
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                            <li><a class="dropdown-item" href="#">Proyectos en Ejecucion</a></li>
-                            <li><a class="dropdown-item" href="#">Proyectos Entregados</a></li>
-                            <li><a class="dropdown-item" href="#">Ganancias</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Boletas de Pago</a></li>
-                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/login.jsp?cerrar=true">Cerrar Sesion</a>

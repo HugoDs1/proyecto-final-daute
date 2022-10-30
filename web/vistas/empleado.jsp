@@ -71,6 +71,7 @@
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-outline-success btnEditar" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-pen-to-square"></i></button>
                                     <button type="button" class="btn btn-outline-danger btnEliminar" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-sharp fa-solid fa-trash"></i></button>
+                                    <a class="btn btn-outline-dark" target="_blank" href="${pageContext.servletContext.contextPath}/viewsReport/boletaDePagoReport.jsp?idEmpleado=<%= elem.getId_empleado()%>">Generar Boleta de Pagos</a>
                                 </div>
                             </td>
                         </tr>

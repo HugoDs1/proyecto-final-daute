@@ -16,7 +16,45 @@
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                         <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                            <div class="card-body p-5">
+                            <div class="card-body">
+                                <center>
+                                    <div class="spinner-border border-0 mt-3 mx-1">
+                                        <img
+                                            src="https://cdn.icon-icons.com/icons2/1350/PNG/512/nuticon_87878.png"
+                                            alt="Imagen de una tuerca"
+                                            style="width: 50px; padding-bottom: 20px"
+                                            >
+                                    </div>
+                                    <div class="spinner-border border-0 mt-3 mx-1">
+                                        <img
+                                            src="https://cdn.icon-icons.com/icons2/1350/PNG/512/nuticon_87878.png"
+                                            alt="Imagen de una tuerca"
+                                            style="width: 50px; padding-bottom: 20px"
+                                            >
+                                    </div>
+                                    <div class="spinner-border border-0 mt-3 mx-1">
+                                        <img
+                                            src="https://cdn.icon-icons.com/icons2/1350/PNG/512/nuticon_87878.png"
+                                            alt="Imagen de una tuerca"
+                                            style="width: 50px; padding-bottom: 20px"
+                                            >
+                                    </div>
+                                    <div class="spinner-border border-0 mt-3 mx-1">
+                                        <img
+                                            src="https://cdn.icon-icons.com/icons2/1350/PNG/512/nuticon_87878.png"
+                                            alt="Imagen de una tuerca"
+                                            style="width: 50px; padding-bottom: 20px"
+                                            >
+                                    </div>
+                                    <div class="spinner-border border-0 mt-3 mx-1">
+                                        <img
+                                            src="https://cdn.icon-icons.com/icons2/1350/PNG/512/nuticon_87878.png"
+                                            alt="Imagen de una tuerca"
+                                            style="width: 50px; padding-bottom: 20px"
+                                            >
+                                    </div>
+                                </center>
+                                <br>
                                 <h3 class="mb-5 text-center"><b>Empresa Constructora</b></h3>
                                 <hr class="my-4">
                                 <form action="${pageContext.servletContext.contextPath}/LoginServlet" method="POST">

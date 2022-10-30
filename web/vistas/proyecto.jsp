@@ -87,9 +87,10 @@
                             <td class="municipioId"><%= elem.getMunicipio()%></td>
                             <td class="departamentoId"><%= elem.getDepartamento()%></td>
                             <td class="usuario"><%= elem.getUsuario()%></td>
-                            <td>
+                            <td class="btn-group">
                                 <button type="button" class="btn btn-outline-success btnEditar" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button type="button" class="btn btn-outline-danger btnEliminar" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-sharp fa-solid fa-trash"></i></button>
+                                <a class="btn btn-outline-dark" target="_blank" href="${pageContext.servletContext.contextPath}/viewsReport/gastosPorProyectoReport.jsp?idProyecto=<%= elem.getIdProyecto()%>">Genera Reporte de Gastos</a>
                             </td>
                         </tr>
                         <%
@@ -157,7 +158,6 @@
                                         <%
                                             ArrayList<Departamento> listaDepartamento = departamentoDAO.mostrarDepartamento();
                                             for (Departamento elem : listaDepartamento) {
-
                                         %>
                                         <option value="<%=elem.getIdDepartamento()%>">
                                             <%= elem.getNombre()%>
