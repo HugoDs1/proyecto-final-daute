@@ -53,11 +53,15 @@
             if (request.getAttribute("datos") != null) {
                 lista = (ArrayList<Usuario>) request.getAttribute("datos");
                 String username = "";
+                String nivel = "";
                 for (Usuario elem : lista) {
                     username = elem.getUsername();
+                    nivel = elem.getNivel() == 0 ? "Usuario" : "Administrador";
                 }
                 sesion.setAttribute("usuario", username);
+                sesion.setAttribute("nivel", nivel);
                 response.sendRedirect("index.jsp");
+
             }
 
             if (request.getParameter("cerrar") != null) {

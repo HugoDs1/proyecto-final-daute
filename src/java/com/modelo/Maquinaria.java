@@ -1,25 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.modelo;
 
-/**
- *
- * @author bless
- */
 public class Maquinaria {
+
     private int idMaquinaria;
     private String nombre;
     private int Stock;
+    private String descripcion;
 
     public Maquinaria() {
     }
 
-    public Maquinaria(int idMaquinaria, String nombre, int Stock) {
+    public Maquinaria(int idMaquinaria, String nombre, int Stock, String descripcion) {
         this.idMaquinaria = idMaquinaria;
         this.nombre = nombre;
         this.Stock = Stock;
+        this.descripcion = descripcion;
     }
 
     public int getIdMaquinaria() {
@@ -44,5 +39,13 @@ public class Maquinaria {
 
     public void setStock(int Stock) {
         this.Stock = Stock;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }

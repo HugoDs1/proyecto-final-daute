@@ -1,9 +1,6 @@
 package com.modelo;
 
 import com.conexion.Conexion;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,17 +9,15 @@ import com.modelo.Usuario;
 
 public class UsuarioDAO extends Conexion {
 
-    public int insertar(Usuario u) throws FileNotFoundException {
+    public int insertar(Usuario u) {
         int res = 0;
-        File foto = new File(u.getFotografia());
         try {
             this.conectar();
-            FileInputStream fotoConverted = new FileInputStream(foto);
-            String sql = "INSERT INTO usuario(username, password, fotografia) VALUES(?, ?, ?)";
+            String sql = "INSERT INTO usuario(username, password, nivel) VALUES(?, ?, ?)";
             PreparedStatement pre = this.getCon().prepareStatement(sql);
             pre.setString(1, u.getUsername());
             pre.setString(2, u.getPassword());
-            pre.setBlob(3, fotoConverted, foto.length());
+            pre.setInt(3, u.getNivel());
             res = pre.executeUpdate();
         } catch (SQLException error) {
             System.out.println("Error al insertar: " + error.getMessage());
@@ -44,7 +39,7 @@ public class UsuarioDAO extends Conexion {
                 u.setIdUsuario(rs.getInt(1));
                 u.setUsername(rs.getString(2));
                 u.setPassword(rs.getString(3));
-                u.setFotografia(rs.getString(4));
+                u.setNivel(rs.getInt(4));
                 lista.add(u);
             }
         } catch (SQLException e) {
@@ -59,11 +54,11 @@ public class UsuarioDAO extends Conexion {
         int res = 0;
         try {
             this.conectar();
-            String sql = "UPDATE usuario SET username = ?, password = ?, fotografia = ? WHERE id_usuario = ?";
+            String sql = "UPDATE usuario SET username = ?, password = ?, nivel = ? WHERE id_usuario = ?";
             PreparedStatement pre = this.getCon().prepareStatement(sql);
             pre.setString(1, u.getUsername());
             pre.setString(2, u.getPassword());
-            pre.setString(3, u.getFotografia());
+            pre.setInt(3, u.getNivel());
             pre.setInt(4, u.getIdUsuario());
             res = pre.executeUpdate();
         } catch (SQLException error) {
@@ -94,7 +89,7 @@ public class UsuarioDAO extends Conexion {
         ArrayList<Usuario> lista = new ArrayList<>();
         try {
             this.conectar();
-            String sql = "SELECT username FROM usuario WHERE username = ? AND password = ?";
+            String sql = "SELECT username, nivel FROM usuario WHERE username = ? AND password = ?";
             PreparedStatement pre = this.getCon().prepareStatement(sql);
             pre.setString(1, usuario);
             pre.setString(2, password);
@@ -103,6 +98,7 @@ public class UsuarioDAO extends Conexion {
             while (rs.next()) {
                 Usuario u = new Usuario();
                 u.setUsername(rs.getString(1));
+                u.setNivel(rs.getInt(2));
                 lista.add(u);
             }
         } catch (SQLException e) {

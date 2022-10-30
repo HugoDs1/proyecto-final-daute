@@ -10,12 +10,12 @@
         <div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header d-flex flex-column justify-content-center">
                 <div>
-                    <p class="fw-bold text-white text-capitalize"><%= usuario %></p>
+                    <p class="fw-bold text-white"><%= usuario%> | <%= nivel %></p>
                 </div>
                 <div class="w-25">
                     <img
                         class="w-100 h-100 rounded-circle"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLe5PABjXc17cjIMOibECLM7ppDwMmiDg6Dw&usqp=CAU"
+                        src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png"
                         alt="Imagen del Usuario" 
                         >
                 </div>
@@ -26,16 +26,16 @@
                         <a class="nav-link active" aria-current="page" href="${pageContext.servletContext.contextPath}/index.jsp">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="vistas/usuarios.jsp">Gestionar Usuarios</a>
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/vistas/usuarios.jsp">Gestionar Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Gestionar Empleados</a>
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/vistas/empleado.jsp">Gestionar Empleados</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/vistas/maquinaria.jsp">Gestionar Maquinaria</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Gestionar Proyecto</a>
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/vistas/proyecto.jsp">Gestionar Proyecto</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

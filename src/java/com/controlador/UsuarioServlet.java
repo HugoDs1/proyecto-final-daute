@@ -25,34 +25,36 @@ public class UsuarioServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            int id = Integer.parseInt(request.getParameter("txtId"));
-            String username = (request.getParameter("txtUsername"));
-            String password = (request.getParameter("txtPassword"));
-            String foto = (request.getParameter("fotografia"));
+            int id = Integer.parseInt(request.getParameter("txtID"));
+            String username = request.getParameter("txtUsername");
+            String password = request.getParameter("txtPassword");
+            int nivel = Integer.parseInt(request.getParameter("txtNivel"));
             String mensaje = "Error";
             int res;
-            
-            Usuario u = new Usuario(id, username, password, foto);
+
+            Usuario u = new Usuario(id, username, password, nivel);
             UsuarioDAO usuarioDAO = new UsuarioDAO();
-            
-            if(request.getParameter("btnGuardar") != null){
+
+            if (request.getParameter("btnGuardar") != null) {
                 res = usuarioDAO.insertar(u);
-                if(res != 0){
+                if (res != 0) {
                     mensaje = "Registro Agregado";
                 }
-            }else if(request.getParameter("btnEditar") != null){
-                res = usuarioDAO.modificar(u); 
-                if(res != 0){
+            } else if (request.getParameter("btnEditar") != null) {
+                res = usuarioDAO.modificar(u);
+                if (res != 0) {
                     mensaje = "Registro Modificado";
                 }
-            }else if(request.getParameter("btnEliminar") != null){
+            } else if (request.getParameter("btnEliminar") != null) {
                 res = usuarioDAO.eliminar(u);
-                if(res != 0){
+                if (res != 0) {
                     mensaje = "Registro Eliminado";
                 }
             }
             request.setAttribute("message", mensaje);
             request.getRequestDispatcher("/vistas/usuarios.jsp").forward(request, response);
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
         }
     }
 

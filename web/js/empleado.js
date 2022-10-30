@@ -1,14 +1,18 @@
 function llenarFormulario(fila) {
-    let id = $(fila).find(".id").text();
-    let username = $(fila).find(".username").text();
-    let password = $(fila).find(".password").text();
-    let nivel = $(fila).find(".nivel").text();
+    var id = $(fila).find(".idEmpleado").text();
+    var dui = $(fila).find(".dui").text();
+    var nombre = $(fila).find(".nombre").text();
+    var apellido = $(fila).find(".apellido").text();
+    var salario = $(fila).find(".salario").text();
+    var estado = $(fila).find(".estado").text();
 
-    $("#txtID").val(id);
-    $("#txtUsername").val(username);
-    $("#txtPassword").val(password);
-    $("#txtNivel option[selected]").removeAttr("selected");
-    $("#txtNivel option:contains(" + nivel + ")").attr('selected', true);
+    $("#txtIdEmpleado").val(id);
+    $("#txtDUI").val(dui);
+    $("#txtNombre").val(nombre);
+    $("#txtApellido").val(apellido);
+    $("#txtSalario").val(salario);
+    $("#txtEstado option[selected]").removeAttr("selected");
+    $(`#txtEstado option:contains(${estado})`).attr('selected', true);
 }
 
 $(document).ready(function () {
@@ -38,4 +42,5 @@ $(document).ready(function () {
         $('.btnOcultar1').css("display", "inline");
     });
 });
+
 

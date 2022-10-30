@@ -1,7 +1,7 @@
 package com.controlador;
 
-import com.modelo.Maquinaria;
-import com.modelo.MaquinariaDAO;
+import com.modelo.Empleado;
+import com.modelo.EmpleadoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MaquinariaServlet extends HttpServlet {
+public class EmpleadoServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -24,40 +24,39 @@ public class MaquinariaServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            //Captura de datos
-            int codigo = Integer.parseInt(request.getParameter("txtCodigo"));
-            String nombre = request.getParameter("txtNombre");
-            int stock = Integer.parseInt(request.getParameter("txtStock"));
-            String descripcion = request.getParameter("txtDescripcion");
+            //Captura de Datos 
+            int idEmpleado = Integer.parseInt(request.getParameter("txtIdEmpleado"));
+            String dui = (request.getParameter("txtDUI"));
+            String nombre = (request.getParameter("txtNombre"));
+            String apellido = (request.getParameter("txtApellido"));
+            double salario = Double.parseDouble(request.getParameter("txtSalario"));
+            int estado = Integer.parseInt(request.getParameter("txtEstado"));
             String mensaje = "Error";
             int res;
 
-            Maquinaria c = new Maquinaria(codigo, nombre, stock, descripcion);
-            MaquinariaDAO maquinariaDAO = new MaquinariaDAO();
+            Empleado em = new Empleado(idEmpleado, dui, nombre, apellido, salario, estado);
+            EmpleadoDAO empleadoDAO = new EmpleadoDAO();
 
             if (request.getParameter("btnGuardar") != null) {
-                res = maquinariaDAO.insertarMaquinaria(c);
+                res = empleadoDAO.insertarEmpleado(em);
                 if (res != 0) {
                     mensaje = "Registro Agregado";
                 }
             } else if (request.getParameter("btnEditar") != null) {
-                res = maquinariaDAO.modificarMaquinaria(c);
+                res = empleadoDAO.modificarEmpleado(em);
                 if (res != 0) {
                     mensaje = "Registro Modificado";
                 }
             } else if (request.getParameter("btnEliminar") != null) {
-                res = maquinariaDAO.eliminarMaquinaria(c);
+                res = empleadoDAO.eliminarEmpleado(em);
                 if (res != 0) {
                     mensaje = "Registro Eliminado";
                 }
-
             }
             request.setAttribute("message", mensaje);
-            request.getRequestDispatcher("/vistas/maquinaria.jsp").forward(request, response);
-
+            request.getRequestDispatcher("/vistas/empleado.jsp").forward(request, response);
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error :" + e.getMessage() + "Diego");
         }
     }
 
