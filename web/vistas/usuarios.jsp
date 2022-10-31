@@ -12,7 +12,7 @@
         usuario = ses.getAttribute("usuario").toString();
         nivel = ses.getAttribute("nivel").toString();
     } else {
-        response.sendRedirect("../login.jsp");
+        response.sendRedirect("/login.jsp");
     }
 %>
 

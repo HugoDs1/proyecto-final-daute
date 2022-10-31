@@ -76,6 +76,7 @@ public class ProyectoDAO extends Conexion {
             pre.setString(3, p.getNombre());
             pre.setDouble(4, p.getValor());
             pre.setInt(5, p.getEstado());
+            pre.setInt(6, p.getIdProyecto());
             res = pre.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Error al Modificar " + e.getMessage());
